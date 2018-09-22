@@ -1,0 +1,21 @@
+<ion-content class="LoginPage" padding text-center>
+  
+  <h1 class="text-large-normal text-primary">Login</h1>
+
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input type="text" [(ngModel)]="username"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+  <button (click)="login()" ion-button round block>Login</button>
+
+  <span class="text-mute text-default-normal">Don't have an account?</span>
+  <br>
+  <a (click)="register()">Register</a>
+
+</ion-content>
