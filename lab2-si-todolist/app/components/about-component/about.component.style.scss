@@ -1,0 +1,39 @@
+.social-item{
+  height: 130px;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+  i{
+    margin-top: 10%;
+    color: #FFF;
+  }
+
+}
+
+.youtube{
+  background-color: #e02a20;
+  &:hover{
+    background-color: red;
+  }
+}
+
+.facebook{
+  background-color: #3e5b98;
+  &:hover{
+    background-color: #476299;
+  }
+}
+
+.github{
+  background-color: #221e1b;
+  &:hover{
+    background-color: #3d3835;
+  }
+}
+
+.linkedin{
+  background-color: #3371b7;
+  &:hover{
+    background-color: #467cba;
+  }
+}

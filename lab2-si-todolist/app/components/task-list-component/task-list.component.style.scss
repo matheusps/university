@@ -1,0 +1,25 @@
+#TaskList{
+
+  .selected-item{
+    text-decoration: line-through;
+    color: $selected-color;
+  }
+
+  .task-title-text{
+    font-size: 20px;
+  }
+
+  .delete-button{
+    color: $selected-color;
+    cursor: pointer;
+    &:hover{
+      color: $destructive-color;
+    }
+  }
+
+  .task-date{
+    margin-right: 20px;
+    color: $selected-color;
+  }
+
+}

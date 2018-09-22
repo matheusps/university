@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="/"> <!--Angular 2 routing -->
+    <title>Todo List - Lab 2 SI</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Todo List - Lab2 SI">
+    <meta name="keywords" content="todo list lab2 si1 ufcg angular2 learning">
+    <meta name="author" content="Matheus P. Silva">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="dist/assets/css/main.css">
+
+    <!-- Material Design Icon font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--font-awessome-->
+    <link rel="stylesheet" href="app/assets/css/font-awesome.min.css">
+
+    <!-- Theter,jquery,boostrap and mdb-->
+    <script src="node_modules/bootstrap/js/tests/vendor/tether.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
+    <script src="node_modules/mdbootstrap/js/mdb.min.js"></script>
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="systemjs.config.js"></script>
+
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+
+  </head>
+
+  <body>
+    <my-app>Loading Reactive TodoList content here ...</my-app>
+  </body>
+
+</html>

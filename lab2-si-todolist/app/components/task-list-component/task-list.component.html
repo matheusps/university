@@ -1,0 +1,61 @@
+<div id="TaskList">
+
+  <!--ADD FORM-->
+  <form class="md-form row">
+
+    <div class="col-xs-10">
+      <input name="newTaskTitle" type="text" [(ngModel)]="newTaskTitle" class="form-control" placeholder="Add new task">
+    </div>
+
+    <div class="col-xs-2">
+      <button type="submit" (click)="addTask()" [disabled]="!newTaskTitle" class="btn btn-unique btn-block">
+        Add Task
+      </button>
+    </div>
+
+  </form>
+  <!--/ADD FORM-->
+
+  <!-- PROGRESS AND STATUS-->
+  <div class="text-xs-center" id="tasks-progress">
+    Tasks completion&hellip; {{ getTaskPercentage() }}%
+  </div>
+
+  <progress class="progress"
+  value="{{getNumberOfDoneTasks()}}"
+  max="{{getNumberOfTasks()}}"
+  aria-describedby="tasks-progress">
+  </progress>
+  <!--/ PROGRESS AND STATUS-->
+
+  <!--LIST OF TASKS-->
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let task of tasks">
+
+      <!--CHECKBOX-->
+      <label class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" name="isDone" [(ngModel)]="task.isDone">
+
+        <span class="custom-control-indicator"></span>
+
+        <span [ngClass]="insertSelectedClass(task)" class="task-title-text custom-control-description">
+          {{task.title}}
+        </span>
+
+      </label>
+      <!--DELETE BUTTON-->
+      <i class="delete-button material-icons float-xs-right" (click)="removeTask(task)" >
+        close
+      </i>
+      <!--DATE-->
+      <span class="task-date float-xs-right">
+        <i class="material-icons">event</i>
+        {{task.createdAt | date:fullDate}}
+      </span>
+      <!--DONE TAG-->
+      <span *ngIf(task.isDone) class="tag tag-primary tag-pill float-xs-right">done</span>
+    </li>
+  </ul>
+  <!--/ LIST OF TASKS-->
+
+</div>
