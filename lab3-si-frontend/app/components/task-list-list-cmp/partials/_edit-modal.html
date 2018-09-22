@@ -1,0 +1,24 @@
+<div class="modal fade" id="editTaskListModal" tabindex="-1" role="dialog" aria-labelledby="editTaskListModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="editTaskListModalLabel">Edit Task List</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="Name" value="" ng-model="$parent.currentTaskList.title">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="text-align: left">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="refreshTaskLists()">Cancel</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="editTaskList()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

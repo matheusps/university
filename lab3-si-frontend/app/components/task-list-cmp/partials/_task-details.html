@@ -1,0 +1,43 @@
+<sidebar id="sidebar2" size="30%" position="right" is-expandable="false">
+    <div style="padding: 15px;">
+        <button class="btn btn-fill btn-danger btn-block" sidebar-toggle="sidebar2"> X Close </button>
+        <br>
+        <h3>{{$parent.currentTask.title}}</h3>
+        <div class="well">
+            <h4>Description</h4>
+            <p>{{$parent.currentTask.description}}</p>
+        </div>
+        <div class="">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="form-group">
+                        <label>New Subtask</label>
+                        <input type="text" class="form-control" placeholder="Title" value="" ng-model="newSubtask.title">
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding-top: 6%">
+                    <button class="btn btn-fill btn-info" ng-click="createSubtask()">ADD</button>
+                </div>
+            </div>
+
+            <h5>Subtasks</h5>
+            <table class="table table-hover table-striped">
+                <thead>
+                <th>Done</th>
+                <th>Title</th>
+                </thead>
+                <tbody>
+                <tr ng-repeat="subtask in $parent.currentTask.subtasks">
+                    <td><input type="checkbox" ng-checked="subtask.done" ng-click="updateSubtask(subtask)"></td>
+                    <td>{{subtask.title}}</td>
+                    <td>
+                        <button type="button" rel="tooltip" title="Remove Task" class="btn btn-danger btn-simple btn-xs" ng-click="deleteSubtask(subtask.id, $index)">
+                            <i style="font-size: 25px" class="pe-7s-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</sidebar>

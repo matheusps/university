@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="header">
+        <h4 class="title">Done Tasks: {{getNumberOfDoneTasks(filteredTasks)}}</h4>
+        <p class="category">Number of tasks:{{filteredTasks.length}}</p>
+    </div>
+    <div class="content table-responsive table-full-width">
+        <table class="table table-hover table-striped">
+            <thead>
+            <td>Done</td>
+            <td>Title</td>
+            <td>Description</td>
+            <td>Category</td>
+            <td>Priority</td>
+            <td>TaskList</td>
+            </thead>
+            <tbody>
+            <tr ng-repeat="task in $parent.allTasks | orderBy:$parent.orderFLAG:$parent.isReverse | filter:$parent.search as filteredTasks" >
+                <td><input type="checkbox" ng-checked="task.done" ng-click="updateTask(task)"></td>
+                <td>{{task.title}}</td>
+                <td>{{task.description}}</td>
+                <td>{{task.category.title}}</td>
+                <td>
+                    <span ng-show="task.priority === 'LOW'" class="label label-info">{{task.priority}}</span>
+                    <span ng-show="task.priority === 'NORMAL'" class="label label-warning">{{task.priority}}</span>
+                    <span ng-show="task.priority === 'HIGH'" class="label label-danger">{{task.priority}}</span>
+                </td>
+                <td>
+                    {{task.taskList.title}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

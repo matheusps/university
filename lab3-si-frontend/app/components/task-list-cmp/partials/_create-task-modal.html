@@ -1,0 +1,72 @@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Create New Task</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" class="form-control" placeholder="Title" value="" ng-model="$parent.newTask.title">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" class="form-control" placeholder="Description" value="" ng-model="$parent.newTask.description">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="category-select">Category</label>
+                            <select class="form-control" id="category-select" ng-model="$parent.newTask.category">
+                                <option value="NEW">Create new category</option>
+                                <option value="{{category.id}}" ng-repeat="category in $parent.allCategories">{{category.title}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 well" ng-show="showCreateCategory()">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label>New Category Title</label>
+                                    <input type="text" class="form-control" placeholder="New Category" value="" ng-model="$parent.newCategory.title">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4" style="padding-top: 4%">
+                                <button type="button" class="btn btn-warning btn-fill" ng-click="createCategory()">Create Category</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="priority-select">Priority</label>
+                            <select class="form-control" id="priority-select" ng-model="$parent.newTask.priority">
+                                <option value="LOW" selected>Low</option>
+                                <option value="NORMAL">Normal</option>
+                                <option value="HIGH">High</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="modal-footer" style="text-align: left">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <button ng-show="$parent.newTask.title && $parent.newTask.description && $parent.newTask.category && $parent.newTask.priority" type="button" class="btn btn-primary" data-dismiss="modal" ng-click="createTask()">Create Task</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<!--NAVBAR-->
+<div ng-include="'app/components/task-list-cmp/partials/_navbar.html'"></div>
+
+<!--CONTENT-->
+<div class="content" style="margin-top: 20px;">
+    <div class="container-fluid">
+        <!--Filter and order card -->
+        <div ng-include="'app/components/task-list-cmp/partials/_filter-card.html'"></div>
+        <!--Data card -->
+        <div ng-include="'app/components/task-list-cmp/partials/_data-card.html'"></div>
+    </div>
+    <!--task details sidebar-->
+    <div ng-include="'app/components/task-list-cmp/partials/_task-details.html'"></div>
+</div>
+
+<!-- create modal -->
+<div ng-include="'app/components/task-list-cmp/partials/_create-task-modal.html'"></div>
+
+<!-- edit Modal -->
+<div ng-include="'app/components/task-list-cmp/partials/_edit-task-modal.html'"></div>

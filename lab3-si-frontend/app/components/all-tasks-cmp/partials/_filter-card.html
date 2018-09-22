@@ -1,0 +1,53 @@
+<div class="card">
+    <div class="content">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="order">Order by</label>
+                    <select class="form-control" id="order" ng-model="$parent.orderFLAG">
+                        <option value="null">None</option>
+                        <option value="title">Title</option>
+                        <option value="category.title">Category</option>
+                        <option value="priority">Priority</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="reverse">Order</label>
+                    <select class="form-control" id="reverse" ng-model="$parent.isReverse">
+                        <option value="">Normal</option>
+                        <option value="false">Reverse</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="category-filter">Filter by Category</label>
+                    <select class="form-control" id="category-filter" ng-model="$parent.search">
+                        <option value="">None</option>
+                        <option value="{{category.title}}" ng-repeat="category in allCategories">{{category.title}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="priority-filter">Filter by Priority</label>
+                    <select class="form-control" id="priority-filter" ng-model="$parent.search">
+                        <option value="">None</option>
+                        <option value="LOW">Low</option>
+                        <option value="NORMAL">Normal</option>
+                        <option value="HIGH">High</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

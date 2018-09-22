@@ -1,0 +1,24 @@
+<!--NAVBAR-->
+<div ng-include="'app/components/categories-cmp/partials/_navbar.html'"></div>
+
+<div class="content" style="margin-top: 20px;">
+    <div class="container-fluid">
+        <dtable options="options" rows="allCategories" class="material">
+            <column name="Title" prop="title"></column>
+            <column name="Options">
+                <button type="button" rel="tooltip" title="Remove Category" class="btn btn-danger btn-simple btn-xs" ng-click="deleteCategory($row.id)">
+                    <i style="font-size: 25px" class="pe-7s-trash"></i>
+                </button>
+                <button type="button" rel="tooltip" title="Edit Category" class="btn btn-info btn-simple btn-xs" data-toggle="modal" data-target="#editCategoryModal" ng-click="setAsCurrent($row)">
+                    <i style="font-size: 25px" class="pe-7s-edit"></i>
+                </button>
+            </column>
+        </dtable>
+    </div>
+</div>
+
+
+<!-- CREATE Modal -->
+<div ng-include="'app/components/categories-cmp/partials/_create-modal.html'"></div>
+<!-- EDIT Modal -->
+<div ng-include="'app/components/categories-cmp/partials/_edit-modal.html'"></div>
